@@ -1,0 +1,15 @@
+<div class="restorant-card">
+    <h3>{{ restaurant().name}}</h3>
+    <p class="ville">{{ restaurant().district}}</p>
+    <p>{{restaurant().specialty}}</p>
+    <app-star-rating [currentRating]="restaurant().currentRating"
+       (ratingChanged)=" onRatingChange($event)">
+       <p>
+         @if (restaurant().currentRating>0){
+        ({{restaurant().currentRating}}/6)
+       }@else {
+        cliquer
+       }
+       </p>
+       </app-star-rating>
+</div>

@@ -1,0 +1,113 @@
+header{
+    padding:10px;
+    display:flex;
+    justify-content:space-between;
+    position:fixed;
+    width:100%;
+    box-sizing:border-box;
+    flex-wrap:wrap;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+
+}
+.logo{
+    font-weight:bold;
+    font-size:25px;
+    padding-left:30px;
+    text-transform: uppercase;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.logo a{
+    color: rgb(89, 0, 255);
+    text-decoration:none;
+
+}
+li a{
+    text-decoration:none;
+    color: black;
+}
+
+li a:hover{
+    background-color: rgb(89, 0, 255);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.1s ease-in-out;
+
+}
+
+ul{
+    display:flex;
+    list-style:none;
+    gap:50px;
+    margin-right: 20px;
+    font-weight: 500;
+
+
+}
+span{
+    /* color:RGB(191, 151,111); */
+   color:gold;
+}
+.etoiles{
+    font-weight: 500;
+    display: flex;
+    margin-bottom: 15px;
+
+}
+
+.burger{
+    display: none;
+}
+
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .logo {
+    font-size: 24px;
+  }
+
+  ul {
+    gap: 25px; /*  réduit l'espace, mais la nav reste visible */
+  }
+
+  nav {
+    padding-right: 20px;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 18px;
+  }
+
+  /* Burger visible */
+  .burger {
+    display: block;
+    margin-right: 10px;
+  }
+
+  /* Nav cachée par défaut */
+  nav {
+    display: none;
+    width: 100%;
+    padding: 10px 30px;
+  }
+
+  /* Nav ouverte via JS */
+  nav.active {
+    display: block;
+  }
+
+  /* Liens en colonne */
+  ul {
+    flex-direction: column; /* clé manquante */
+    gap: 15px;
+    padding: 10px 20px;
+    text-align: right;
+  }
+}

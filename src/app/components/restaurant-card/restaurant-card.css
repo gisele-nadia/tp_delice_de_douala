@@ -1,0 +1,14 @@
+.restorant-card{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    padding: 20px;
+}
+h3{
+    font-size: 25px;
+    
+}
+.ville{
+    color: rgb(89, 0, 255);
+    font-weight: 500;
+
+}

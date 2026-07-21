@@ -1,0 +1,11 @@
+<div class="star-rating" (mouseleave)="onMouseLeave()">
+    @for (star of [1,2,3,4,5,6] ; track star){
+        <span class="star"
+         (click)="setRating(star)" 
+         (mouseenter)="onMouseEnter(star)"
+         [class.filled]="star <= currentRating()"
+          [class.hovered]="star <= hoveredRating()"
+         style="cursor: pointer;"> ★ </span>
+    }
+    <ng-content></ng-content>
+</div>

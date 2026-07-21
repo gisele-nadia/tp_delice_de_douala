@@ -1,0 +1,19 @@
+<header> 
+  <div class="logo"> 
+    <a href="#">Delice de douala</a> 
+  </div> 
+  
+  <button class="burger" (click)="toggleMenu()">☰</button>
+
+  <nav class="navbar" [class.active]="isMenuOpen"> 
+    <ul> 
+      <li><a href="#">Home</a></li> 
+      <li><a href="#">Products</a></li> 
+      <li><a href="#">Blog</a></li> 
+      <li><a href="#">Contact</a></li> 
+    </ul> 
+      <div class="etoiles"> 
+        <span>★</span> {{ratedCount() }}/6 restaurants
+      </div>
+  </nav> 
+</header> 
