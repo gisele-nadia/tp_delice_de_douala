@@ -1,3 +1,26 @@
-<app-header [ratedCount]="ratedCount()"></app-header>
-<app-restaurant-list [restaurants]="restaurants()"
-(ratingChanged)="updateRating($event)"></app-restaurant-list>
+<app-header [ratedCount]="ratedCount()"
+             [ratemoyenne]="ratemoyenne()"></app-header>
+
+
+<app-restaurant-list [restaurants]="trierestaurants()" [restaurants]="afficherestaurants()" 
+(ratingChanged)="updateRating($event)" ></app-restaurant-list>
+
+
+
+<div class="button">
+    @if (voirestaurants()&& afficherestaurants().length===0){
+        <p class="acun_resultat">Aucun restaurant n a plus de 4 etoiles</p>  
+    }
+    <button  class="trie" (click)="affichertous()">
+        @if (voirestaurants()){voir tous  les restaurants} @else{ voir les restaurants les  mieux notes}
+    </button>
+    <button  class="trie" (click)="trieaffiche()">
+        trier par ordre decroissant
+    </button>
+    
+
+</div>
+
+
+
+

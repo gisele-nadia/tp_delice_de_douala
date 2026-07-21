@@ -1,23 +1,33 @@
 .restaurant-list{
-   padding: 150px 20px 20px ;
+  padding: 150px 20px 20px ;
+
+}
+.restaurant{
+  padding: 20px;
     display: grid;
     grid-template-columns: repeat(3,2fr);
     gap: 40px;
     justify-content: center;
     align-items: center;
-
+}
+.trie button {
+     margin-left: 90%;
+     border: none;
+     border-radius: 5px;
+     width: 70px;
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
-  .restaurant-list {
+  .restaurant {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+
 /* Mobile (≤ 600px) */
 @media (max-width: 600px) {
-  .restaurant-list {
+  .restaurant {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }

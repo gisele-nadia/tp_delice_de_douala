@@ -29,7 +29,44 @@ export class App {
 ]);
   ratedCount= computed(()=> this.restaurants().filter(r =>r.currentRating > 0).length);
   updateRating(event:{id:number; rating:number}){
+    console.log(event);
     this.restaurants.update(list => list.map(r => r.id === event.id?{ ...r, currentRating: event.rating }:r));
   }
 
-}
+  ratemoyenne= computed(()=> {
+    console.log(this.restaurants());
+    const ratedRestaurants = this.restaurants().filter(r => r.currentRating > 0);
+    if (ratedRestaurants.length === 0){
+      return 0;
+    }
+    const total = ratedRestaurants.reduce((sum, r) => sum + r.currentRating ,0 );
+    return total / ratedRestaurants.length;
+  } )
+
+  voirestaurants= signal<boolean>(false);
+  afficherestaurants= computed(()=>{
+    if (this.voirestaurants()){
+     return this.restaurants().filter(r => r.currentRating > 4);
+    }
+    return this.restaurants();
+  });
+  affichertous(){
+    this.voirestaurants.update(current => !current)
+  }
+  trie=signal<boolean>(false);
+
+  trierestaurants= computed(()=>{
+    if(this.trie()){
+      return[ ...this.restaurants()].sort((a,b)=> b.currentRating - a.currentRating);
+    }
+    return this.restaurants();  
+  })
+
+  trieaffiche(){
+    this.trie.update(current => !current)
+  }
+  
+  }
+
+
+

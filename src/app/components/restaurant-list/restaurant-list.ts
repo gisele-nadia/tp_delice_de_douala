@@ -1,4 +1,4 @@
-import { Component, input , output} from '@angular/core';
+import { Component, input , output, signal, computed} from '@angular/core';
 import { RestaurantCard } from "../restaurant-card/restaurant-card";
 import { Restaurant } from '../../models/restaurant.model';
 @Component({
@@ -15,4 +15,4 @@ export class RestaurantList {
     this.ratingChanged.emit(event);
   }
   
-  }
+}

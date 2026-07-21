@@ -1,10 +1,15 @@
 <div class="restaurant-list">
-    @for (restaurant of restaurants() ; track restaurant.id){
+    
+
+    <div class="restaurant">
+        @for (restaurant of restaurants() ; track restaurant.id){
         <app-restaurant-card [restaurant]="restaurant"
          (ratingChanged)=" onRatingChange($event)"></app-restaurant-card>
-
-
     }
+    </div>
 
+     
 
+    
+     
 </div>

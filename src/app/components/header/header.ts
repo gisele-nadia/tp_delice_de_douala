@@ -7,9 +7,12 @@ import { Component, input } from '@angular/core';
   styleUrl: './header.css',
 })
 export class Header {
-  ratedCount= input<number>(0);
+  ratedCount= input<number>();
+
+  ratemoyenne = input <number>();
 
    isMenuOpen = false;
+ratedRestaurants: any;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
